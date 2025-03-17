@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Layers, Zap, Shield, Globe, Code, Palette } from 'lucide-react';
+import { Shield, Zap, Smartphone, Search, MousePointer, Settings } from 'lucide-react';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -12,14 +12,14 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delayIndex }) => {
   return (
     <div 
-      className="glass-card rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] group reveal-animation" 
+      className="neo-blur rounded-xl p-6 transition-all duration-300 hover:translate-y-[-5px] group reveal-animation" 
       style={{ transitionDelay: `${100 * delayIndex}ms` }}
     >
-      <div className="mb-5 flex items-center justify-center w-12 h-12 rounded-lg bg-secondary text-primary-foreground group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+      <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-full bg-white/5 text-white group-hover:bg-white/10 transition-colors duration-300">
         {icon}
       </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{description}</p>
+      <h3 className="text-xl font-light mb-3 tracking-wide">{title}</h3>
+      <p className="text-white/60 leading-relaxed text-sm">{description}</p>
     </div>
   );
 };
@@ -49,34 +49,34 @@ const FeatureSection: React.FC = () => {
 
   const features = [
     {
-      icon: <Palette className="h-6 w-6" />,
-      title: "Stunning Designs",
-      description: "Beautifully crafted interfaces that create memorable experiences for your visitors."
+      icon: <MousePointer className="h-5 w-5" />,
+      title: "Design UI",
+      description: "Interfaces visuelles épurées et élégantes qui reflètent l'excellence de votre marque."
     },
     {
-      icon: <Zap className="h-6 w-6" />,
-      title: "Lightning Fast",
-      description: "Optimized for speed with cutting-edge technology that ensures swift load times."
+      icon: <Zap className="h-5 w-5" />,
+      title: "Vitesse Optimale",
+      description: "Performance exceptionnelle garantissant des temps de chargement quasi instantanés."
     },
     {
-      icon: <Layers className="h-6 w-6" />,
-      title: "Modular Structure",
-      description: "Flexible components that adapt to your content needs and future growth."
+      icon: <Smartphone className="h-5 w-5" />,
+      title: "100% Responsive",
+      description: "Adaptation parfaite à tous les appareils, du mobile au grand écran."
     },
     {
-      icon: <Shield className="h-6 w-6" />,
-      title: "Secure & Reliable",
-      description: "Built with security best practices to protect your data and your customers."
+      icon: <Shield className="h-5 w-5" />,
+      title: "Sécurité Maximale",
+      description: "Protection de vos données et de vos clients avec les meilleures pratiques de sécurité."
     },
     {
-      icon: <Globe className="h-6 w-6" />,
-      title: "Global Reach",
-      description: "SEO optimized with multi-language support to connect with audiences worldwide."
+      icon: <Search className="h-5 w-5" />,
+      title: "SEO Optimisé",
+      description: "Visibilité accrue dans les moteurs de recherche pour atteindre votre audience."
     },
     {
-      icon: <Code className="h-6 w-6" />,
-      title: "Clean Code",
-      description: "Meticulously written code that is maintainable and ready for future expansion."
+      icon: <Settings className="h-5 w-5" />,
+      title: "Gestion Facile",
+      description: "Interface d'administration intuitive permettant des mises à jour sans effort."
     }
   ];
 
@@ -86,16 +86,16 @@ const FeatureSection: React.FC = () => {
       ref={sectionRef}
       className="py-24 md:py-32 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-secondary text-secondary-foreground mb-4 reveal-animation">
-            Our Features
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+          <span className="inline-block py-1 px-2 text-xs tracking-widest uppercase text-white/50 mb-4 reveal-animation font-light">
+            Nos Services
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 reveal-animation" style={{ transitionDelay: '100ms' }}>
-            Crafted with Precision and Purpose
+          <h2 className="text-2xl md:text-3xl font-light mb-6 reveal-animation tracking-wide" style={{ transitionDelay: '100ms', letterSpacing: '-0.02em' }}>
+            <span className="text-gradient">L'Excellence dans Chaque Détail</span>
           </h2>
-          <p className="text-lg text-muted-foreground reveal-animation" style={{ transitionDelay: '200ms' }}>
-            Every feature is designed to elevate your digital presence and provide exceptional user experiences.
+          <p className="text-sm md:text-base text-white/60 reveal-animation font-light" style={{ transitionDelay: '200ms' }}>
+            Chaque fonctionnalité est conçue pour sublimer votre présence numérique et garantir une expérience utilisateur exceptionnelle.
           </p>
         </div>
         
@@ -111,9 +111,6 @@ const FeatureSection: React.FC = () => {
           ))}
         </div>
       </div>
-      
-      <div className="absolute top-1/4 right-0 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-purple-400/10 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };

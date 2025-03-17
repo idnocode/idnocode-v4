@@ -45,16 +45,20 @@ const Index: React.FC = () => {
       observer.observe(el);
     });
 
+    // Add a class to body to set the dark background
+    document.body.classList.add('bg-[#0c0c12]');
+
     return () => {
       document.removeEventListener('click', handleAnchorClick);
       document.querySelectorAll('.reveal-animation').forEach((el) => {
         observer.unobserve(el);
       });
+      document.body.classList.remove('bg-[#0c0c12]');
     };
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-transparent text-white">
       <Navbar />
       <main className="flex-grow">
         <HeroSection />

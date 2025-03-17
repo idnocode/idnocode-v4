@@ -18,19 +18,19 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   
-  const baseStyles = "relative overflow-hidden font-medium transition-all duration-300 ease-out flex items-center justify-center rounded-full";
+  const baseStyles = "relative overflow-hidden font-light transition-all duration-300 ease-out flex items-center justify-center";
   
   const variants = {
-    primary: "bg-primary text-primary-foreground hover:opacity-90",
-    secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-    outline: "border border-primary bg-transparent text-primary hover:bg-primary/10",
-    ghost: "bg-transparent hover:bg-secondary text-primary"
+    primary: "bg-white text-black hover:bg-white/90",
+    secondary: "bg-white/10 text-white hover:bg-white/20",
+    outline: "border border-white/20 bg-transparent text-white hover:bg-white/10",
+    ghost: "bg-transparent hover:bg-white/5 text-white"
   };
   
   const sizes = {
-    sm: "text-xs px-4 py-1.5",
-    md: "text-sm px-5 py-2",
-    lg: "text-base px-8 py-3"
+    sm: "text-xs px-4 py-2",
+    md: "text-sm px-5 py-2.5",
+    lg: "text-xs px-8 py-3.5"
   };
   
   const handleMouseEnter = () => setIsHovered(true);
