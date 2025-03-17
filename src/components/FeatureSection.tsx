@@ -7,13 +7,18 @@ interface FeatureCardProps {
   title: string;
   description: string;
   delayIndex: number;
+  gradient: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delayIndex }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delayIndex, gradient }) => {
   return (
     <div 
-      className="neo-blur rounded-xl p-6 transition-all duration-300 hover:translate-y-[-5px] group reveal-animation" 
-      style={{ transitionDelay: `${100 * delayIndex}ms` }}
+      className={`neo-blur rounded-xl p-6 transition-all duration-300 hover:translate-y-[-5px] group reveal-animation backdrop-blur-xl`}
+      style={{ 
+        transitionDelay: `${100 * delayIndex}ms`,
+        background: `linear-gradient(135deg, rgba(20, 20, 25, 0.7) 0%, ${gradient} 100%)`,
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+      }}
     >
       <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-full bg-white/5 text-white group-hover:bg-white/10 transition-colors duration-300">
         {icon}
@@ -46,6 +51,15 @@ const FeatureSection: React.FC = () => {
       elements?.forEach((el) => observer.unobserve(el));
     };
   }, []);
+
+  const gradients = [
+    'rgba(78, 84, 200, 0.1)',
+    'rgba(111, 76, 255, 0.1)',
+    'rgba(84, 170, 255, 0.1)',
+    'rgba(116, 58, 213, 0.1)',
+    'rgba(33, 138, 227, 0.1)',
+    'rgba(76, 110, 245, 0.1)'
+  ];
 
   const features = [
     {
@@ -107,6 +121,7 @@ const FeatureSection: React.FC = () => {
               title={feature.title}
               description={feature.description}
               delayIndex={index}
+              gradient={gradients[index]}
             />
           ))}
         </div>

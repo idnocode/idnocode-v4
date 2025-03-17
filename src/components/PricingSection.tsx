@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedButton from './AnimatedButton';
 import { Check } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 
 interface PricingTierProps {
   title: string;
@@ -10,6 +11,7 @@ interface PricingTierProps {
   features: string[];
   isPopular?: boolean;
   delayFactor?: number;
+  gradientColor: string;
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({
@@ -18,15 +20,22 @@ const PricingTier: React.FC<PricingTierProps> = ({
   description,
   features,
   isPopular = false,
-  delayFactor = 0
+  delayFactor = 0,
+  gradientColor
 }) => {
   return (
     <div 
       className={`
-        reveal-animation flex flex-col h-full rounded-xl overflow-hidden transition-all duration-500 neo-blur
+        reveal-animation flex flex-col h-full rounded-xl overflow-hidden transition-all duration-500
         ${isPopular ? 'border border-white/20' : 'border border-white/5'}
       `}
-      style={{ transitionDelay: `${delayFactor * 150}ms` }}
+      style={{ 
+        transitionDelay: `${delayFactor * 150}ms`,
+        background: `linear-gradient(135deg, rgba(20, 20, 25, 0.7) 0%, ${gradientColor} 100%)`,
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+      }}
     >
       {isPopular && (
         <div className="bg-white/10 backdrop-blur-lg text-white py-1.5 px-4 text-xs tracking-widest uppercase font-light text-center">
@@ -89,6 +98,12 @@ const PricingSection: React.FC = () => {
       elements?.forEach((el) => observer.unobserve(el));
     };
   }, []);
+
+  const gradientColors = [
+    'rgba(84, 170, 255, 0.1)',
+    'rgba(116, 58, 213, 0.1)',
+    'rgba(76, 110, 245, 0.1)'
+  ];
 
   const pricing = [
     {
@@ -183,6 +198,7 @@ const PricingSection: React.FC = () => {
               features={tier.features}
               isPopular={tier.isPopular}
               delayFactor={index}
+              gradientColor={gradientColors[index]}
             />
           ))}
         </div>

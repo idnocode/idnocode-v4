@@ -1,5 +1,5 @@
 
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import AnimatedButton from "../components/AnimatedButton";
 
@@ -21,9 +21,11 @@ const NotFound = () => {
         <p className="text-white/60 mb-8 text-sm">
           La page que vous recherchez n'existe pas ou a été déplacée.
         </p>
-        <AnimatedButton variant="primary" href="/">
-          Retour à l'accueil
-        </AnimatedButton>
+        <Link to="/">
+          <AnimatedButton variant="primary">
+            Retour à l'accueil
+          </AnimatedButton>
+        </Link>
       </div>
     </div>
   );

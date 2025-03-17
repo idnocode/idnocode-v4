@@ -34,8 +34,9 @@ const HeroSection: React.FC = () => {
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c0c12] via-[#13131e] to-[#1a1a2e]"></div>
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#3b82f6]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-[#8b5cf6]/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-[#10b981]/10 rounded-full blur-3xl"></div>
         </div>
       </div>
       
@@ -70,30 +71,26 @@ const HeroSection: React.FC = () => {
         
         <div className="mt-24 max-w-4xl mx-auto reveal-animation" style={{ transitionDelay: '400ms' }}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-            <div className="p-6 neo-blur rounded-lg">
-              <div className="mb-4 text-xl font-light">Design UI</div>
-              <p className="text-sm text-white/60">Interfaces élégantes et intuitives</p>
-            </div>
-            <div className="p-6 neo-blur rounded-lg">
-              <div className="mb-4 text-xl font-light">Design UX</div>
-              <p className="text-sm text-white/60">Expériences utilisateur mémorables</p>
-            </div>
-            <div className="p-6 neo-blur rounded-lg">
-              <div className="mb-4 text-xl font-light">Responsive</div>
-              <p className="text-sm text-white/60">Parfait sur tous les appareils</p>
-            </div>
-            <div className="p-6 neo-blur rounded-lg">
-              <div className="mb-4 text-xl font-light">SEO</div>
-              <p className="text-sm text-white/60">Optimisé pour les moteurs de recherche</p>
-            </div>
-            <div className="p-6 neo-blur rounded-lg">
-              <div className="mb-4 text-xl font-light">Vitesse</div>
-              <p className="text-sm text-white/60">Performances exceptionnelles</p>
-            </div>
-            <div className="p-6 neo-blur rounded-lg">
-              <div className="mb-4 text-xl font-light">Sécurité</div>
-              <p className="text-sm text-white/60">Protection optimale des données</p>
-            </div>
+            {[
+              { title: "Design UI", desc: "Interfaces élégantes et intuitives" },
+              { title: "Design UX", desc: "Expériences utilisateur mémorables" },
+              { title: "Responsive", desc: "Parfait sur tous les appareils" },
+              { title: "SEO", desc: "Optimisé pour les moteurs de recherche" },
+              { title: "Vitesse", desc: "Performances exceptionnelles" },
+              { title: "Sécurité", desc: "Protection optimale des données" }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="p-6 rounded-lg transition-all duration-300 backdrop-blur-xl" 
+                style={{ 
+                  background: `linear-gradient(135deg, rgba(20, 20, 25, 0.7) 0%, rgba(${30 + index * 10}, ${30 + index * 8}, ${50 + index * 15}, 0.4) 100%)`,
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)'
+                }}
+              >
+                <div className="mb-4 text-xl font-light">{item.title}</div>
+                <p className="text-sm text-white/60">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
