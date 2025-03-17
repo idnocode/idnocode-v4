@@ -1,12 +1,68 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import HeroSection from '../components/HeroSection';
+import FeatureSection from '../components/FeatureSection';
+import PricingSection from '../components/PricingSection';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+
+const Index: React.FC = () => {
+  // Smooth scroll when clicking on navigation links
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A') {
+        const href = target.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          e.preventDefault();
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
+    // Initialize reveal animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    document.querySelectorAll('.reveal-animation').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+      document.querySelectorAll('.reveal-animation').forEach((el) => {
+        observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main className="flex-grow">
+        <HeroSection />
+        <FeatureSection />
+        <PricingSection />
+        <ContactSection />
+      </main>
+      <Footer />
     </div>
   );
 };
