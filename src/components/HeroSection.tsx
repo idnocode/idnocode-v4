@@ -33,10 +33,10 @@ const HeroSection: React.FC = () => {
     >
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c0c12] via-[#13131e] to-[#1a1a2e]"></div>
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#3b82f6]/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-[#8b5cf6]/10 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-[#10b981]/10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#8B5CF6]/15 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-[#D946EF]/15 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-[#9b87f5]/15 rounded-full blur-3xl"></div>
         </div>
       </div>
       
@@ -81,7 +81,7 @@ const HeroSection: React.FC = () => {
             ].map((item, index) => (
               <div 
                 key={index} 
-                className="p-6 rounded-lg transition-all duration-300 backdrop-blur-xl" 
+                className="p-6 rounded-xl transition-all duration-300 backdrop-blur-xl" 
                 style={{ 
                   background: `linear-gradient(135deg, rgba(20, 20, 25, 0.7) 0%, rgba(${30 + index * 10}, ${30 + index * 8}, ${50 + index * 15}, 0.4) 100%)`,
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)'

@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
           href="#" 
           className="text-2xl font-display font-bold tracking-tighter"
         >
-          SiteForge
+          iDNoCode
         </a>
         
         {/* Desktop Navigation */}
@@ -40,19 +40,19 @@ const Navbar: React.FC = () => {
             href="#features" 
             className="text-sm font-medium opacity-80 hover:opacity-100 transition-opacity"
           >
-            Features
+            Fonctionnalités
           </a>
           <a 
             href="#showcase" 
             className="text-sm font-medium opacity-80 hover:opacity-100 transition-opacity"
           >
-            Showcase
+            Réalisations
           </a>
           <a 
             href="#pricing" 
             className="text-sm font-medium opacity-80 hover:opacity-100 transition-opacity"
           >
-            Pricing
+            Tarifs
           </a>
           <a 
             href="#contact" 
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
             Contact
           </a>
           <AnimatedButton variant="primary" size="md">
-            Get Started
+            Commencer
           </AnimatedButton>
         </nav>
         
@@ -87,21 +87,21 @@ const Navbar: React.FC = () => {
                 className="text-sm font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Features
+                Fonctionnalités
               </a>
               <a 
                 href="#showcase" 
                 className="text-sm font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Showcase
+                Réalisations
               </a>
               <a 
                 href="#pricing" 
                 className="text-sm font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pricing
+                Tarifs
               </a>
               <a 
                 href="#contact" 
@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
                 className="w-full mt-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get Started
+                Commencer
               </AnimatedButton>
             </nav>
           </div>

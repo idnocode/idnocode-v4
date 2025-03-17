@@ -40,8 +40,8 @@ const ContactSection: React.FC = () => {
     
     // Show success message
     toast({
-      title: "Message sent!",
-      description: "We'll get back to you soon.",
+      title: "Message envoyé !",
+      description: "Nous vous répondrons très bientôt.",
     });
     
     // Reset form and show success state
@@ -66,13 +66,13 @@ const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div>
             <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-secondary text-secondary-foreground mb-4 reveal-animation">
-              Get In Touch
+              Contactez-nous
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 reveal-animation" style={{ transitionDelay: '100ms' }}>
-              Let's Create Something Amazing Together
+              Créons Ensemble Quelque Chose d'Exceptionnel
             </h2>
             <p className="text-lg text-muted-foreground mb-8 reveal-animation" style={{ transitionDelay: '200ms' }}>
-              Have a project in mind or questions about our services? We're here to help turn your vision into reality.
+              Vous avez un projet en tête ou des questions sur nos services ? Nous sommes là pour transformer votre vision en réalité.
             </p>
             
             <div className="space-y-6 reveal-animation" style={{ transitionDelay: '300ms' }}>
@@ -83,8 +83,8 @@ const ContactSection: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <h3 className="text-lg font-semibold mb-1">Téléphone</h3>
+                  <p className="text-muted-foreground">+33 (0)1 23 45 67 89</p>
                 </div>
               </div>
               
@@ -97,7 +97,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">hello@siteforge.com</p>
+                  <p className="text-muted-foreground">contact@idnocode.com</p>
                 </div>
               </div>
               
@@ -109,8 +109,8 @@ const ContactSection: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-1">Location</h3>
-                  <p className="text-muted-foreground">123 Design Avenue, San Francisco, CA</p>
+                  <h3 className="text-lg font-semibold mb-1">Adresse</h3>
+                  <p className="text-muted-foreground">123 Avenue du Design, 75001 Paris</p>
                 </div>
               </div>
             </div>
@@ -118,12 +118,12 @@ const ContactSection: React.FC = () => {
           
           <div className="reveal-animation" style={{ transitionDelay: '400ms' }}>
             <div className="glass-card rounded-2xl p-8 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6">Send us a message</h3>
+              <h3 className="text-2xl font-bold mb-6">Envoyez-nous un message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
+                    Nom
                   </label>
                   <input
                     id="name"
@@ -132,7 +132,7 @@ const ContactSection: React.FC = () => {
                     onChange={(e) => setName(e.target.value)}
                     required
                     className="w-full px-4 py-3 bg-secondary/50 focus:bg-secondary border border-transparent focus:border-primary rounded-lg transition-colors duration-300 focus:outline-none"
-                    placeholder="Your name"
+                    placeholder="Votre nom"
                   />
                 </div>
                 
@@ -147,7 +147,7 @@ const ContactSection: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     className="w-full px-4 py-3 bg-secondary/50 focus:bg-secondary border border-transparent focus:border-primary rounded-lg transition-colors duration-300 focus:outline-none"
-                    placeholder="your@email.com"
+                    placeholder="votre@email.com"
                   />
                 </div>
                 
@@ -162,7 +162,7 @@ const ContactSection: React.FC = () => {
                     required
                     rows={4}
                     className="w-full px-4 py-3 bg-secondary/50 focus:bg-secondary border border-transparent focus:border-primary rounded-lg transition-colors duration-300 focus:outline-none"
-                    placeholder="How can we help you?"
+                    placeholder="Comment pouvons-nous vous aider ?"
                   />
                 </div>
                 
@@ -175,12 +175,12 @@ const ContactSection: React.FC = () => {
                   {submitted ? (
                     <>
                       <CheckCircle className="mr-2 h-4 w-4" />
-                      Message Sent
+                      Message Envoyé
                     </>
                   ) : (
                     <>
                       <Send className="mr-2 h-4 w-4" />
-                      Send Message
+                      Envoyer
                     </>
                   )}
                 </AnimatedButton>

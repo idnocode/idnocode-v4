@@ -12,10 +12,10 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12">
           <div className="md:col-span-1">
             <a href="#" className="text-2xl font-display font-bold tracking-tighter mb-6 inline-block">
-              SiteForge
+              iDNoCode
             </a>
             <p className="text-muted-foreground mb-6 max-w-xs">
-              Crafting premium digital experiences with minimalist design and cutting-edge technology.
+              Création d'expériences digitales premium avec un design minimaliste et des technologies de pointe.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -53,10 +53,10 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
+            <h3 className="text-lg font-semibold mb-4">Notre Entreprise</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">About Us</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Our Work</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">À Propos</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Nos Réalisations</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Services</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Blog</a></li>
               <li><a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
@@ -66,32 +66,32 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Website Design</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Web Development</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Design Web</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Développement Web</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">E-commerce</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Brand Identity</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">SEO Optimization</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Identité de Marque</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Optimisation SEO</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <h3 className="text-lg font-semibold mb-4">Mentions Légales</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">GDPR Compliance</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Politique de Confidentialité</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Conditions d'Utilisation</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Politique des Cookies</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Conformité RGPD</a></li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} SiteForge. All rights reserved.
+            &copy; {currentYear} iDNoCode. Tous droits réservés.
           </p>
           <div className="mt-4 md:mt-0">
             <a href="#" className="scroll-to-top inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Back to top
+              Retour en haut
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="12" y1="19" x2="12" y2="5"></line>
                 <polyline points="5 12 12 5 19 12"></polyline>
