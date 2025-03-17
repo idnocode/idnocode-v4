@@ -44,11 +44,16 @@ const AbstractShape: React.FC<AbstractShapeProps> = ({ className }) => {
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
         
-        // Use light blue/gray colors
-        const hue = Math.random() * 20 + 210; // Blue-ish hue range
-        const saturation = Math.random() * 30 + 5; // Low saturation
-        const lightness = Math.random() * 30 + 65; // High lightness
-        this.color = `hsla(${hue}, ${saturation}%, ${lightness}%, ${Math.random() * 0.3 + 0.1})`;
+        // Use more vibrant colors
+        const colorPalette = [
+          'rgba(61, 217, 245, 0.2)',  // Bright cyan
+          'rgba(61, 90, 254, 0.15)',  // Electric blue
+          'rgba(240, 18, 190, 0.2)',  // Hot pink
+          'rgba(172, 67, 252, 0.15)', // Vibrant purple
+          'rgba(252, 246, 89, 0.1)'   // Electric yellow
+        ];
+        
+        this.color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
       }
       
       update() {
@@ -104,7 +109,7 @@ const AbstractShape: React.FC<AbstractShapeProps> = ({ className }) => {
           
           if (distance < maxDistance) {
             const opacity = 1 - (distance / maxDistance);
-            ctx.strokeStyle = `rgba(200, 210, 255, ${opacity * 0.2})`;
+            ctx.strokeStyle = `rgba(150, 100, 255, ${opacity * 0.3})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);

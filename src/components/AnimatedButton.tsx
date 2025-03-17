@@ -21,8 +21,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   const baseStyles = "relative overflow-hidden font-light transition-all duration-300 ease-out flex items-center justify-center rounded-full";
   
   const variants = {
-    primary: "bg-gradient-to-r from-[#9b87f5] to-[#7E69AB] text-white hover:from-[#8B5CF6] hover:to-[#9b87f5]",
-    secondary: "bg-gradient-to-r from-white/10 to-white/5 text-white hover:from-white/20 hover:to-white/15",
+    primary: "bg-gradient-to-r from-[#3ABEFF] to-[#2667FF] text-white hover:from-[#4361EE] hover:to-[#4CC9F0]",
+    secondary: "bg-gradient-to-r from-[#F72585] to-[#B5179E] text-white hover:from-[#7209B7] hover:to-[#560BAD]",
     outline: "border border-white/20 bg-transparent text-white hover:bg-white/10",
     ghost: "bg-transparent hover:bg-white/5 text-white"
   };
